@@ -1,10 +1,6 @@
 django-admin-bootstrapped
 =========================
 
-.. image:: https://travis-ci.org/django-admin-bootstrapped/django-admin-bootstrapped.svg
-    :target: https://travis-ci.org/django-admin-bootstrapped/django-admin-bootstrapped
-
-|PyPI version|
 
 A Django admin theme using Bootstrap. It doesn't need any kind
 of modification on your side, just add it to the installed apps.
@@ -17,6 +13,23 @@ Requirements
 With Django ``1.6`` use version ``2.3.6``
 
 With Django ``1.7`` use version ``2.4.0``
+
+Install Private Package
+------------
+1. ``pip install git+https://github.com/linsec/django-admin-bootstrapped``
+2. 
+    pyenv virtualenv dab_env
+    pyenv activate dab_env
+    ``git clone https://github.com/linsec/django-admin-bootstrapped``
+    ``cd django-admin-bootstrapped && python setup.py install``
+    
+    ``pip uninstall django-admin-bootstrapped``
+
+Localization
+------------
+1. create locale in app dir
+2. django-admin makemessages -l zh_Hans
+3. django-admin compilemessages
 
 Installation
 ------------
