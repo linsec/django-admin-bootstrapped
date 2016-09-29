@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for test_django_admin_bootstrapped project.
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = (
 
     'test_django_admin_bootstrapped',
     'CapitalApp',
+    'TestCapital',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,6 +60,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.i18n',
+    'django.template.context_processors.request',
 )
 
 ROOT_URLCONF = 'test_django_admin_bootstrapped.urls'
@@ -98,3 +101,39 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# django theme suit configurations
+SUIT_CONFIG = {
+    'MENU': (
+        {'app': 'auth',
+         'label': u'账号管理',
+         'models': ('user', 'group')
+        },
+        {'app': 'auth',
+         'label': u'账号管理',
+         'models': ('user', 'group')
+        },
+        {'app': 'CapitalApp',
+         'label': u'Capitalapp自定义名字',
+         'models': ('capitalmodel',),
+        },
+        {'app': 'TestCapital',
+         'label': u'Capitalapp自定义名字',
+         'models': ('testcapitalmodel',),
+        },
+        {'label': u'帮助',
+         'models': ({'label': u'商家管理',
+                     'url': '/utils/userplus_help/'},
+                    {'label': u'众筹系统',
+                     'url': '/utils/crowdfund_help/'},
+                    )
+         },
+         {'label': u'帮助2',
+         'models': ({'label': u'商家管理',
+                     'url': '/utils/userplus_help/'},
+                    {'label': u'众筹系统',
+                     'url': '/utils/crowdfund_help/'},
+                    )
+         }
+     ),
+}

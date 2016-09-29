@@ -31,6 +31,33 @@ Localization
 2. django-admin makemessages -l zh_Hans
 3. django-admin compilemessages
 
+Using django-suit menu
+------------
+- add 'django.template.context_processors.request' to TEMPLATE_CONTEXT_PROCESSORS
+- app name defined in 'MENU' should be the same as the database table prefix, model name is lower. appname_modelname is the table name in db. 
+- example
+
+      SUIT_CONFIG = {
+        'MENU': (
+            {'app': 'auth',
+             'label': u'账号管理',
+             'models': ('user', 'group')
+            },
+            {'app': 'CapitalApp',
+             'label': u'Capitalapp自定义名字',
+             'models': ('capitalmodel',),
+            },
+            {'label': u'帮助',
+             'models': ({'label': u'商家管理',
+                         'url': '/utils/userplus_help/'},
+                        {'label': u'众筹系统',
+                         'url': '/utils/crowdfund_help/'},
+                        )
+             },
+           ),
+        }
+
+
 Installation
 ------------
 
